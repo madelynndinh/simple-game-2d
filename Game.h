@@ -1,8 +1,8 @@
 // prgama once
 #include <SFML/Graphics.hpp>
 #include <SFML/Network.hpp>
-#include <vector>
 #include <ctime>
+#include <vector>
 #ifndef GAME_H
 #define GAME_H
 
@@ -18,16 +18,18 @@ class Game {
   sf::RenderWindow* window;
   sf::VideoMode videoMode;
   sf::Event ev;
-  
-  //Mouse positions
+
+
+  // Mouse positions
   sf::Vector2i mousePosWindow;
+  sf::Vector2f mousePosView;
 
-
-//Game logic
-int points;
-float enemySpawnTimer;
-float enemySpawnTimerMax;
-int maxEnemies;
+  // Game logic
+  unsigned points;  //points are always positive
+  float enemySpawnTimer;
+  float enemySpawnTimerMax;
+  int maxEnemies;
+  
 
   // Game objects
   std::vector<sf::RectangleShape> enemies;
